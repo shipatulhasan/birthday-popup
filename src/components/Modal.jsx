@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ show, setShow, value, handleSubmit }) => {
+const Modal = ({ show, setShow, value, handleSubmit, handleVerify }) => {
   return (
     <div>
       <div>
@@ -11,24 +11,24 @@ const Modal = ({ show, setShow, value, handleSubmit }) => {
           >
             <div
               role="alert"
-              className="container mx-auto w-3/5 md:w-1/2 max-w-3xl"
+              className="container mx-auto w-3/5 md:w-1/2 max-w-3xl scale-[1.4]"
             >
               <div className="relative py-8 px-8 md:px-16 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-md rounded border border-gray-400">
                 <div className="w-full flex justify-center text-green-400 mb-4">
                   <img
                     src="https://i.ibb.co/dWSDszJ/tom-cruise.jpg"
-                    className="w-1/3 h-1/3 rounded-full"
+                    className="w-1/5 h-1/5 rounded-full"
                   />
                 </div>
-                <h1 className="text-center text-3xl text-gray-800 dark:text-gray-100 font-bold tracking-normal leading-tight mb-4">
+                <h1 className="text-center text-3xl text-gray-800 dark:text-gray-100 font-bold tracking-normal leading-tight mb-2">
                   Tom Cruse
                 </h1>
                 {value==="age" ? (
                   <>
-                    <form onSubmit={handleSubmit} className='grid place-items-center space-y-4'>
+                    <form onSubmit={handleSubmit} className='grid place-items-center space-y-4 mt-2'>
                         <input type='date' name="birthdate" className='w-2/5 border border-slate-300 rounded p-2' />
                         <button
-                        className="focus:outline-none transition duration-150 ease-in-out hover:bg-indigo-800 bg-indigo-700 rounded text-white px-4 sm:px-8 py-2 text-md sm:text-lg"
+                        className="focus:outline-none transition duration-150 ease-in-out hover:bg-indigo-800 bg-indigo-700 rounded text-white px-4 sm:px-8 py-2 text-lg sm:text-xl"
                         type="submit"
                         // onClick={() => setShow(!show)}
                       >
@@ -43,12 +43,12 @@ const Modal = ({ show, setShow, value, handleSubmit }) => {
                     </p>
                     <div className="flex items-center justify-center w-full">
                       <button
-                        className="focus:outline-none transition duration-150 ease-in-out hover:bg-green-800 bg-green-700 rounded text-white px-4 sm:px-8 py-2 text-md sm:text-lg"
-                        onClick={() => setShow(!show)}
+                        className="focus:outline-none transition duration-150 ease-in-out hover:bg-green-800 bg-green-700 rounded text-white px-4 sm:px-8 py-2 text-lg sm:text-xl"
+                        onClick={handleVerify}
                       >
                         Yes
                       </button>
-                      <button className="focus:outline-none ml-3 bg-red-600 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-gray-600 transition duration-150 text-white dark:text-gray-400 ease-in-out hover:border-gray-400 hover:bg-red-700 border rounded px-8 py-2 text-md sm:text-lg">
+                      <button className="focus:outline-none ml-3 bg-red-600 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-gray-600 transition duration-150 text-white dark:text-gray-400 ease-in-out hover:border-gray-400 hover:bg-red-700 border rounded px-8 py-2 text-lg sm:text-xl">
                         No
                       </button>
                     </div>

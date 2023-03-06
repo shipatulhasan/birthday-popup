@@ -5,6 +5,7 @@ import Modal from './components/Modal'
 // age
 function App() {
   const[show,setShow]=useState(false)
+
   // const [showPopup, setShowPopup] = useState('ageverification')
 
   const handleAge = (e)=>{
@@ -15,17 +16,28 @@ function App() {
     console.log(birthdate)
 
   }
+  const handleVerify = ()=>{
+  setShow(!show)
+  localStorage.setItem('BBBage-verification',true)
+  }
 
   useEffect(()=>{
-    const unsubscribe = setTimeout(()=>{
-      setShow(true)
-    },3000)
- return ()=>clearTimeout(unsubscribe)
+    const isVerified = localStorage.getItem('BBBage-verification')
+    if(!isVerified){
+      const unsubscribe = setTimeout(()=>{
+        setShow(true)
+      },3000)
+   return ()=>clearTimeout(unsubscribe)
+    }else{
+      setShow(false)
+      return
+    }
+   
   },[])
 
   return (
     <div className='absolute top-0 right-0 bottom-0 left-0'>
-      <Modal show={show} setShow={setShow} value={'birth'} handleSubmit = {handleAge} />
+      <Modal show={show} setShow={setShow} value={'birth'} handleVerify= {handleVerify} handleSubmit = {handleAge} />
     </div>
   )
 }
