@@ -28,10 +28,9 @@ function App() {
         setShow(true)
       },3000)
    return ()=>clearTimeout(unsubscribe)
-    }else{
-      setShow(false)
-      return
     }
+    setShow(false)
+    return
    
   },[])
 

@@ -13,7 +13,7 @@ const Modal = ({ show, setShow, value, handleSubmit, handleVerify }) => {
               role="alert"
               className="container mx-auto w-3/5 md:w-1/2 max-w-3xl scale-[1.4]"
             >
-              <div className="relative py-8 px-8 md:px-16 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-md rounded border border-gray-400">
+              <div className="relative py-8 px-8 md:px-16 bg-white dark:bg-gray-800 rounded">
                 <div className="w-full flex justify-center text-green-400 mb-4">
                   <img
                     src="https://i.ibb.co/dWSDszJ/tom-cruise.jpg"
@@ -25,8 +25,8 @@ const Modal = ({ show, setShow, value, handleSubmit, handleVerify }) => {
                 </h1>
                 {value==="age" ? (
                   <>
-                    <form onSubmit={handleSubmit} className='grid place-items-center space-y-4 mt-2'>
-                        <input type='date' name="birthdate" className='w-2/5 border border-slate-300 rounded p-2' />
+                    <form onSubmit={handleSubmit} className='grid place-items-center space-y-2 mt-4'>
+                        <input type='date' name="birthdate" className='w-2/5 border border-slate-300 rounded px-2 focus:outline-none' />
                         <button
                         className="focus:outline-none transition duration-150 ease-in-out hover:bg-indigo-800 bg-indigo-700 rounded text-white px-4 sm:px-8 py-2 text-lg sm:text-xl"
                         type="submit"
@@ -48,7 +48,7 @@ const Modal = ({ show, setShow, value, handleSubmit, handleVerify }) => {
                       >
                         Yes
                       </button>
-                      <button className="focus:outline-none ml-3 bg-red-600 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-gray-600 transition duration-150 text-white dark:text-gray-400 ease-in-out hover:border-gray-400 hover:bg-red-700 border rounded px-8 py-2 text-lg sm:text-xl">
+                      <button className="focus:outline-none ml-3 bg-red-600 transition duration-150 text-white ease-in-out hover:bg-red-700 rounded px-8 py-2 text-lg sm:text-xl">
                         No
                       </button>
                     </div>
