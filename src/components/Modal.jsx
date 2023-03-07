@@ -1,6 +1,7 @@
 import React from "react";
+import DateSelect from "./DateSelect/DateSelect";
 
-const Modal = ({ show, setShow, value, handleSubmit, handleVerify }) => {
+const Modal = ({ show, setShow, value, handleSubmit, handleVerify}) => {
   return (
     <div>
       <div>
@@ -25,16 +26,7 @@ const Modal = ({ show, setShow, value, handleSubmit, handleVerify }) => {
                 </h1>
                 {value==="age" ? (
                   <>
-                    <form onSubmit={handleSubmit} className='grid place-items-center space-y-2 mt-4'>
-                        <input type='date' name="birthdate" className='w-2/5 border border-slate-300 rounded px-2 focus:outline-none' />
-                        <button
-                        className="focus:outline-none transition duration-150 ease-in-out hover:bg-indigo-800 bg-indigo-700 rounded text-white px-4 sm:px-8 py-2 text-lg sm:text-xl"
-                        type="submit"
-                        // onClick={() => setShow(!show)}
-                      >
-                        Submit
-                      </button>
-                    </form>
+                        <DateSelect handleSubmit={handleSubmit} />
                   </>
                 ) : (
                   <>
