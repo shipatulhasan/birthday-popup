@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Modal from "./components/Modal";
+import Swal from 'sweetalert2'
 
 // birthday
 // age
@@ -8,10 +9,18 @@ function App() {
 
   // const [showPopup, setShowPopup] = useState('ageverification')
 
-  const handleBirthDate = (yyyy,mm,dd) => {
-   
+  const handleBirthDate = (yyyy,mm,dd,event) => {
+    event.preventDefault()
     const date = `${dd}-${mm}-${yyyy}`
     console.log(date);
+    event.target.reset()
+    Swal.fire(
+      'Cogratulations!',
+      'You have successfully saved your birthdate here',
+      'success'
+    )
+    localStorage.setItem("BBBage-verification", true);
+    setShow(false)
   };
   const handleVerify = () => {
     setShow(!show);
